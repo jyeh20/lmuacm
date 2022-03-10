@@ -1,0 +1,15 @@
+.Event-event {
+  background-color: #66081d;
+}
+
+.Event-info {
+  background-color: #585858;
+}
+
+td {
+  border-bottom: 1px solid white;
+}
+
+tr:last-child > td {
+  border-bottom: none;
+}

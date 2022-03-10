@@ -1,0 +1,21 @@
+.Contact {
+  margin: auto;
+  display: grid;
+  width: 350px;
+  height: 200px;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.Contact-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  /* grid-row-start: 1;
+  grid-row-end: 2; */
+}
+
+.Contact-button {
+  margin: auto;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
