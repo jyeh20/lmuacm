@@ -1,21 +1,32 @@
 .Contact {
   margin: auto;
   display: grid;
-  width: 350px;
+  width: 300px;
   height: 200px;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 24% 14% 24% 14% 24%;
 }
 
 .Contact-row {
+  margin: auto;
   width: 100%;
   display: grid;
   grid-template-columns: 30% 70%;
-  /* grid-row-start: 1;
-  grid-row-end: 2; */
 }
 
 .Contact-button {
   margin: auto;
   grid-column-start: 1;
   grid-column-end: 2;
+}
+
+.Contact-link {
+  margin: auto;
+  color: inherit;
+}
+
+@media screen and (max-width: 767px) {
+  .Contact {
+    width: 65%;
+    height: 25vh;
+  }
 }

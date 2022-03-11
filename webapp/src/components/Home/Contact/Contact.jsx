@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Contact.css";
 
-import SOCIALS from "../../../assets/socials.json";
+import links from "../../../assets/links.json";
 
 import IconButton from "@mui/material/IconButton";
 
@@ -12,22 +12,39 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Contact = (props) => {
   const { color } = props;
-  const socials = SOCIALS.socials;
-  console.log(socials);
+  const socials = links.socials;
 
-  let social_arr = [];
-  console.log(Object.entries(socials));
-  for (let [item, value] in Object.entries(socials)) {
-    console.log(item, value);
-  }
+  const getIcon = (name) => {
+    switch (name) {
+      case "Instagram":
+        return <InstagramIcon sx={{ color: color }} />;
+      case "Facebook":
+        return <FacebookIcon sx={{ color: color }} />;
+      default:
+        return <LinkedInIcon sx={{ color: color }} />;
+    }
+  };
 
   return (
     <div className="Contact">
-      <div style={{ gridRowStart: 2 }} className="Contact-row">
-        <IconButton className="Contact-button">
-          <InstagramIcon sx={{ color: color }} />
-        </IconButton>
-      </div>
+      {socials.map(([name, link], index) => (
+        <a
+          href={link}
+          target="_blank"
+          style={{ gridRowStart: index * 2 + 1, color: color }}
+          // className="Contact-row"
+        >
+          <div
+            // href={link}
+            // target="_blank"
+            // style={{ gridRowStart: index * 2 + 1, color: color }}
+            className="Contact-row"
+          >
+            <IconButton className="Contact-button">{getIcon(name)}</IconButton>
+            <div className="Contact-link">{name}</div>
+          </div>
+        </a>
+      ))}
     </div>
   );
 };
