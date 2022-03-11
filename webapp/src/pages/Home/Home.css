@@ -1,6 +1,6 @@
 .Home-bg-img {
   position: fixed;
-  min-height: 200px;
+  min-height: 320px;
   top: -50px;
   left: 0px;
   z-index: -1;
@@ -12,6 +12,8 @@
   margin-top: 300px;
   padding-bottom: 150px;
   font-size: 16px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   transition-duration: 2s;
 }
 

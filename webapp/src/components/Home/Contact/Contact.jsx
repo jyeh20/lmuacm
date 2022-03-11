@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Contact.css";
 
-import links from "../../../assets/links.json";
+import assetList from "../../../assets/assetList.json";
 
 import IconButton from "@mui/material/IconButton";
 
@@ -12,7 +12,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Contact = (props) => {
   const { color } = props;
-  const socials = links.socials;
+  const socials = assetList.socials;
 
   const getIcon = (name) => {
     switch (name) {

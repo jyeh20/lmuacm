@@ -10,5 +10,11 @@
     ["Instagram", "https://www.instagram.com/lmuacm/"],
     ["Facebook", "https://www.facebook.com/loyolamarymountacm"],
     ["LinkedIn", "https://www.linkedin.com/company/lmu-acm"]
+  ],
+
+  "nav": [
+    ["Home", "/"],
+    ["Events", "/events"],
+    ["Links", "/link"]
   ]
 }
