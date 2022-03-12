@@ -6,9 +6,11 @@ const Link = (props) => {
   const { name, link } = props;
   return (
     <div className="Link">
-      <a href={link} target="_blank" className="Link-name">
-        {name}
-      </a>
+      <div className="Link-text">
+        <a href={link} target="_blank" className="Link-name">
+          {name}
+        </a>
+      </div>
     </div>
   );
 };

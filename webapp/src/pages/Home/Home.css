@@ -61,7 +61,7 @@
   }
 
   .Home-content {
-    width: 100vw;
+    /* width: 100vw; */
     margin-top: calc(60px + 7 * ((50vh - 30px) / 16));
     padding-bottom: 25vh;
     font-size: calc(16px + 7 * ((100vw - 320px) / 680));
@@ -87,6 +87,13 @@
   .Home-purpose-paragraph {
     width: 80%;
     line-height: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Home-bg-img {
+    height: 100vw;
+    top: calc(70px - 30vh);
   }
 }
 
