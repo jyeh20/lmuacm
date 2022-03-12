@@ -6,7 +6,7 @@ import EventsTable from "../../components/Home/EventsTable/EventsTable";
 import Contact from "../../components/Home/Contact/Contact";
 
 const Home = (props) => {
-  const { color, bgColor } = props;
+  const { color, bgColor, eventDoc } = props;
 
   return (
     <div>
@@ -18,7 +18,9 @@ const Home = (props) => {
           color: color,
         }}
       >
-        <div className="Home-content-title">Our Purpose</div>
+        <div className="Home-content-title" style={{ color: color }}>
+          Our Purpose
+        </div>
         <div className="Home-purpose">
           <div className="Home-purpose-header">
             The Chapter is organized and will be operated exclusively for
@@ -41,9 +43,13 @@ const Home = (props) => {
           </ol>
         </div>
 
-        <div className="Home-content-title">Upcoming Events</div>
-        <EventsTable color={color} bgColor={bgColor} />
-        <div className="Home-content-title">Contact Us</div>
+        <div className="Home-content-title" style={{ color: color }}>
+          Upcoming Events
+        </div>
+        <EventsTable eventDoc={eventDoc} />
+        <div className="Home-content-title" style={{ color: color }}>
+          Contact Us
+        </div>
         <Contact color={color} />
       </div>
     </div>

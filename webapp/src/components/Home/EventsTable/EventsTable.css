@@ -7,6 +7,10 @@ table {
   table-layout: fixed;
 }
 
+tr {
+  min-height: 20px;
+}
+
 th {
   background-color: #003673;
   height: 30px;
@@ -20,6 +24,7 @@ td {
   border-bottom: 1px solid #dbdbdb;
   transition-duration: 2s;
   word-wrap: break-word;
+  padding: 5px;
 }
 
 th:first-of-type {
@@ -42,6 +47,14 @@ tr:last-of-type td:last-of-type {
 @media screen and (min-width: 370px) {
   table {
     width: 93%;
-    font-size: calc(14px + 0.5vw);
+    font-size: calc(10px + 0.5vw);
+  }
+
+  th {
+    font-size: 1.6em;
+  }
+
+  tr {
+    height: 6vh;
   }
 }

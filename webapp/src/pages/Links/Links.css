@@ -1,0 +1,11 @@
+.Links {
+  padding-top: 90px;
+}
+
+@media screen and (max-width: 767px) {
+  .Links {
+    height: 86vh;
+    padding-top: 10vh;
+    padding-bottom: 4vh;
+  }
+}

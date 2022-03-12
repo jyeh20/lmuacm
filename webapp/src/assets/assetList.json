@@ -15,6 +15,6 @@
   "nav": [
     ["Home", "/"],
     ["Events", "/events"],
-    ["Links", "/link"]
+    ["Links", "/links"]
   ]
 }

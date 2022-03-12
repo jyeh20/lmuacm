@@ -4,24 +4,29 @@ import "./Footer.css";
 import assetList from "../../assets/assetList.json";
 
 import IconButton from "@mui/material/IconButton";
+import { Link } from "react-router-dom";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import LinkIcon from "@mui/icons-material/Link";
 
 const Footer = (props) => {
-  const { color } = props;
+  const { color, setPage } = props;
   const navButtons = assetList.nav;
 
   const getButton = (name) => {
     switch (name) {
       case "Home":
-        return <HomeIcon sx={{ color: color, fontSize: "1.3em" }} />;
+        return <HomeIcon sx={{ color: "#DBDBDB" }} />;
       case "Events":
-        return <CalendarTodayIcon sx={{ color: color }} />;
+        return <CalendarTodayIcon sx={{ color: "#DBDBDB" }} />;
       default:
-        return <LinkIcon sx={{ color: color }} />;
+        return <LinkIcon sx={{ color: "#DBDBDB" }} />;
     }
+  };
+
+  const handlePageChange = (page) => {
+    setPage(page);
   };
 
   return (
@@ -35,14 +40,23 @@ const Footer = (props) => {
         >
           <a
             className="Footer-button-container"
-            href={link}
-            style={{
-              color: color,
-              textDecoration: "None",
+            onClick={() => {
+              handlePageChange(name);
             }}
           >
-            <IconButton className="Footer-button">{getButton(name)}</IconButton>
-            <div className="Footer-link">{name}</div>
+            <Link
+              // href={link}
+              style={{
+                color: "#DBDBDB",
+                textDecoration: "None",
+              }}
+              to={link}
+            >
+              <IconButton className="Footer-button">
+                {getButton(name)}
+              </IconButton>
+              <div className="Footer-link">{name}</div>
+            </Link>
           </a>
         </div>
       ))}

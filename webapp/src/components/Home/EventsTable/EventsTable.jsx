@@ -1,21 +1,26 @@
-import { borderBottom } from "@mui/system";
 import React from "react";
 
 import "./EventsTable.css";
 import EventsData from "../EventsData/EventsData";
 
 const EventsTable = (props) => {
-  const { data, bgColor } = props;
+  const { eventDoc } = props;
   return (
-    <table className="Events">
+    <table>
       <tr>
         <th width="30%">Event</th>
         <th>When</th>
         <th>Where</th>
         <th>More Info</th>
       </tr>
-      <EventsData />
-      <EventsData />
+      {Object.entries(eventDoc).map(([name, items]) => (
+        <EventsData
+          name={name}
+          when={items.when}
+          where={items.where}
+          info={items.info}
+        />
+      ))}
     </table>
   );
 };
