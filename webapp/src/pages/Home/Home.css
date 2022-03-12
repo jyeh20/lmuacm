@@ -1,6 +1,6 @@
 .Home-bg-img {
   position: fixed;
-  min-height: 320px;
+  min-height: 360px;
   top: -50px;
   left: 0px;
   z-index: -1;
@@ -62,7 +62,7 @@
 
   .Home-content {
     width: 100vw;
-    margin-top: 35vh;
+    margin-top: calc(60px + 7 * ((50vh - 30px) / 16));
     padding-bottom: 25vh;
     font-size: calc(16px + 7 * ((100vw - 320px) / 680));
   }
