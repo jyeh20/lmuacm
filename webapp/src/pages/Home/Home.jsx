@@ -44,7 +44,7 @@ const Home = (props) => {
         </div>
 
         <div className="Home-content-title" style={{ color: color }}>
-          Upcoming Events
+          Events
         </div>
         <EventsTable eventDoc={eventDoc} />
         <div className="Home-content-title" style={{ color: color }}>
