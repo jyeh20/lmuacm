@@ -8,23 +8,32 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./Header.css";
 
 const Header = (props) => {
-  const { changeTheme, currentPage, color, bgColor } = props;
+  const { changeTheme, currentPage, color, backgroundColor } = props;
 
   return (
     <div className="Header">
       <div className="Header-mobile">
-        <div
-          className="Header-dark-toggle"
-          style={{ backgroundColor: bgColor }}
-        >
+        <div className="Header-dark-toggle" style={{ backgroundColor }}>
           <IconButton onClick={changeTheme}>
-            <LightModeIcon sx={{ color: color }} />
+            <LightModeIcon sx={{ color }} />
           </IconButton>
         </div>
         <div className="Header-title">LMU ACM</div>
         <div className="Header-subtitle">{currentPage}</div>
       </div>
-      <div className="Header-large-screen">Hello Large</div>
+      <div className="Header-large-screen">
+        <div className="Header-menu" style={{ backgroundColor }}>
+          <IconButton>
+            <MenuIcon sx={{ color }} />
+          </IconButton>
+        </div>
+        <div className="Header-title">LMU ACM</div>
+        <div className="Header-dark-toggle" style={{ backgroundColor }}>
+          <IconButton onClick={changeTheme}>
+            <LightModeIcon sx={{ color }} fontSize="max(2vh, 2vw)" />
+          </IconButton>
+        </div>
+      </div>
     </div>
   );
 };

@@ -13,6 +13,7 @@
 }
 
 .Home-content {
+  height: 300vh;
   min-width: 360px;
   margin-top: 300px;
   padding-bottom: 150px;

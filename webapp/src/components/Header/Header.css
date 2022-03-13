@@ -2,10 +2,11 @@
   min-height: 80px;
   max-height: 400px;
   min-width: 360px;
+  width: 100%;
   background-color: #003673;
-  color: #dbdbdb;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  color: #dbdbdb;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -65,7 +66,37 @@
   }
 
   .Header-large-screen {
+    height: 7vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 27% 8% 30% 8% 27%;
+    font-size: max(2vh, 2vw);
+  }
+
+  .Header-menu {
     margin: auto;
-    width: 100vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  .Header-title {
+    margin: auto;
+    grid-column-start: 3;
+  }
+
+  .Header-dark-toggle {
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 5;
+    height: 1.5em;
+    width: 1.5em;
   }
 }

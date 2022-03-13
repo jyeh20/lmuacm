@@ -54,7 +54,7 @@ function App() {
           changeTheme={handleChangeTheme}
           currentPage={currentPage}
           color={textColor}
-          bgColor={bgColor}
+          backgroundColor={bgColor}
         />
         <Routes>
           <Route

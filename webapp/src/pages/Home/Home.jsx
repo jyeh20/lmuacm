@@ -9,7 +9,7 @@ const Home = (props) => {
   const { color, bgColor, eventDoc } = props;
 
   return (
-    <div>
+    <>
       <img className="Home-bg-img" src={logo} alt="LMU ACM logo"></img>
       <div
         className="Home-content"
@@ -52,7 +52,7 @@ const Home = (props) => {
         </div>
         <Contact color={color} />
       </div>
-    </div>
+    </>
   );
 };
 
