@@ -2,7 +2,6 @@ table {
   margin: auto;
   width: 350px;
   border-collapse: collapse;
-  font-size: 14px;
   color: #dbdbdb;
   table-layout: fixed;
 }
@@ -47,11 +46,6 @@ tr:last-of-type td:last-of-type {
 @media screen and (min-width: 370px) {
   table {
     width: 93%;
-    font-size: calc(10px + 0.5vw);
-  }
-
-  th {
-    font-size: 1.6em;
   }
 
   tr {

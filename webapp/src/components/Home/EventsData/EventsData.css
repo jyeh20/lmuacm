@@ -1,6 +1,5 @@
 .Event-event {
   background-color: #66081d;
-  font-size: 1.3em;
 }
 
 .Event-info {
@@ -13,4 +12,10 @@ td {
 
 tr:last-child > td {
   border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .Event-info {
+    font-size: 0.6em;
+  }
 }

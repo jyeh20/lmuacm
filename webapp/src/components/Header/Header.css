@@ -21,9 +21,9 @@
     display: grid;
     margin: auto;
     height: 100%;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 60% 30%;
     grid-template-rows: 33% 33% 33%;
-    font-size: max(5vw, 5vh);
+    font-size: 2em;
   }
 
   .Header-title {
@@ -66,11 +66,10 @@
   }
 
   .Header-large-screen {
-    height: 7vh;
+    height: 9vh;
     width: 100%;
     display: grid;
     grid-template-columns: 27% 8% 30% 8% 27%;
-    font-size: max(2vh, 2vw);
   }
 
   .Header-menu {
@@ -80,8 +79,8 @@
     justify-content: center;
     align-items: center;
     grid-column-start: 1;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.3em;
+    width: 1.3em;
   }
 
   .Header-title {
@@ -96,7 +95,7 @@
     justify-content: center;
     align-items: center;
     grid-column-start: 5;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.3em;
+    width: 1.3em;
   }
 }

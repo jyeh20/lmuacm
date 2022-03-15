@@ -13,11 +13,9 @@
 }
 
 .Home-content {
-  height: 300vh;
   min-width: 360px;
   margin-top: 300px;
   padding-bottom: 150px;
-  font-size: 16px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   animation: fadeIn 1s;
@@ -30,7 +28,6 @@
 .Home-content-title {
   padding-top: 60px;
   margin-bottom: 20px;
-  font-size: 40px;
   text-decoration: underline dotted;
   transition-duration: 2s;
 }
@@ -46,13 +43,12 @@
 .Home-purpose-header {
   margin: auto;
   text-align: center;
-  transition-duration: 2s;
 }
 
 .Home-purpose-paragraph {
   margin: auto;
+  margin-top: 20px;
   width: 300px;
-  transition-duration: 2s;
 }
 
 @media screen and (max-width: 767px) {
@@ -62,39 +58,62 @@
   }
 
   .Home-content {
-    /* width: 100vw; */
-    margin-top: calc(60px + 7 * ((50vh - 30px) / 16));
+    margin-top: calc(60px + 10 * ((50vh - 30px) / 16));
     padding-bottom: 25vh;
-    font-size: calc(16px + 7 * ((100vw - 320px) / 680));
   }
 
   .Home-content-title {
     margin-bottom: 4vh;
-    font-size: 2.8rem;
     padding-top: 5rem;
+    font-size: 1.6em;
+  }
+
+  .Home-purpose {
+    margin: auto;
+    margin-top: 2rem;
+    line-height: 2rem;
+    width: 100%;
+    font-size: 0.7em;
   }
 
   .Home-purpose-header {
     margin: auto;
-    width: 92vw;
-  }
-
-  .Home-purpose {
-    margin-top: 2rem;
-    line-height: 2rem;
-    width: 100%;
+    width: 85%;
+    font-size: 1.2em;
   }
 
   .Home-purpose-paragraph {
-    width: 80%;
+    margin-top: 3vh;
+    width: 65%;
     line-height: 2.2rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .Home-bg-img {
     height: 100vw;
     top: calc(70px - 30vh);
+  }
+
+  .Home-content-title {
+  }
+
+  .Home-purpose {
+    display: grid;
+    margin-top: 2rem;
+    line-height: 2rem;
+    grid-template-columns: 50% 50%;
+    width: 70%;
+  }
+
+  .Home-purpose-header {
+    width: 70%;
+    text-align: left;
+  }
+
+  .Home-purpose-header {
+    margin: auto;
+    grid-column-start: 1;
   }
 }
 

@@ -1,4 +1,5 @@
 .App {
+  font-size: calc(16px + 7 * ((100vh - 320px) / 680));
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;

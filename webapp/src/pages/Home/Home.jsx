@@ -26,16 +26,14 @@ const Home = (props) => {
             The Chapter is organized and will be operated exclusively for
             educational and scientific purposes to promote the following:
           </div>
-          <ol type="I">
-            <li className="Home-purpose-paragraph">
+          <ol type="I" className="Home-purpose-paragraph">
+            <li>
               An increased knowledge of and greater interest in the science,
               design, development, construction, languages, management and
               applications of modern computing.
             </li>
-            <li className="Home-purpose-paragraph">
-              Greater interest in computing and its applications.
-            </li>
-            <li className="Home-purpose-paragraph">
+            <li>Greater interest in computing and its applications.</li>
+            <li>
               A means of communication between persons having an interest in
               computing and those with an interest in applying computing in
               other fields.

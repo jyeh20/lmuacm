@@ -40,8 +40,8 @@
 
 .Footer-link {
   margin: auto;
-  font-size: 16px;
   grid-row-start: 2;
+  font-size: 0.8em;
 }
 
 @media screen and (max-width: 767px) {
