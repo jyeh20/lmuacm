@@ -70,32 +70,47 @@
     width: 100%;
     display: grid;
     grid-template-columns: 27% 8% 30% 8% 27%;
+    grid-template-rows: 33% 33% 33%;
+  }
+
+  .Header-button {
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.7em;
+    width: 1.7em;
   }
 
   .Header-menu {
     margin: auto;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     grid-column-start: 1;
-    height: 1.3em;
-    width: 1.3em;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  .Header-text {
+    grid-column-start: 3;
   }
 
   .Header-title {
     margin: auto;
-    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-size: 2em;
+  }
+
+  .Header-subtitle {
+    margin: auto;
+    grid-row-start: 3;
+    font-size: 1.2em;
   }
 
   .Header-dark-toggle {
     margin: auto;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     grid-column-start: 5;
-    height: 1.3em;
-    width: 1.3em;
+    grid-row-start: 1;
+    grid-row-end: 4;
   }
 }

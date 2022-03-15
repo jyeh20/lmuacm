@@ -17,11 +17,11 @@ const Contact = (props) => {
   const getIcon = (name) => {
     switch (name) {
       case "Instagram":
-        return <InstagramIcon sx={{ color: color }} />;
+        return <InstagramIcon sx={{ color, fontSize: "1.4em" }} />;
       case "Facebook":
-        return <FacebookIcon sx={{ color: color }} />;
+        return <FacebookIcon sx={{ color, fontSize: "1.4em" }} />;
       default:
-        return <LinkedInIcon sx={{ color: color }} />;
+        return <LinkedInIcon sx={{ color, fontSize: "1.4em" }} />;
     }
   };
 
@@ -31,7 +31,7 @@ const Contact = (props) => {
         <a
           href={link}
           target="_blank"
-          style={{ gridRowStart: index * 2 + 1, color: color }}
+          style={{ gridRowStart: index * 2 + 1, color }}
           // className="Contact-row"
         >
           <div

@@ -1,5 +1,4 @@
 .Events {
-  padding-top: 90px;
   min-height: 80vh;
 }
 
@@ -15,9 +14,23 @@
 
 @media screen and (max-width: 767px) {
   .Events {
-    margin-top: 4vh;
-    padding-top: 12vh;
-    padding-bottom: 4vh;
+    min-height: 86vh;
+    padding-bottom: 14vh;
+  }
+
+  .Events-table {
+    padding-top: 16vh;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .Events {
+    min-height: 86vh;
+    padding-bottom: 14vh;
+  }
+
+  .Events-table {
+    padding-top: 16vh;
   }
 }
 

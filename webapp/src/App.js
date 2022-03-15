@@ -71,7 +71,11 @@ function App() {
           <Route
             path="/links"
             element={
-              <Links color={textColor} bgColor={bgColor} linkDoc={linkDoc} />
+              <Links
+                color={textColor}
+                backgroundColor={bgColor}
+                linkDoc={linkDoc}
+              />
             }
           />
         </Routes>

@@ -1,11 +1,25 @@
 .Links {
-  padding-top: 90px;
+  min-height: 80vh;
 }
 
 @media screen and (max-width: 767px) {
   .Links {
-    height: 86vh;
-    padding-top: 10vh;
-    padding-bottom: 4vh;
+    min-height: 86vh;
+    padding-bottom: 14vh;
+  }
+
+  .Links-container {
+    padding-top: 12vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Links {
+    min-height: 80vh;
+    padding-bottom: 20vh;
+  }
+
+  .Links-container {
+    padding-top: 12vh;
   }
 }

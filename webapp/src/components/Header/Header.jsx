@@ -22,16 +22,23 @@ const Header = (props) => {
         <div className="Header-subtitle">{currentPage}</div>
       </div>
       <div className="Header-large-screen">
-        <div className="Header-menu" style={{ backgroundColor }}>
-          <IconButton>
-            <MenuIcon sx={{ color }} />
-          </IconButton>
+        <div className="Header-menu">
+          <div className="Header-button" style={{ backgroundColor }}>
+            <IconButton>
+              <MenuIcon sx={{ color }} />
+            </IconButton>
+          </div>
         </div>
-        <div className="Header-title">LMU ACM</div>
-        <div className="Header-dark-toggle" style={{ backgroundColor }}>
-          <IconButton onClick={changeTheme}>
-            <LightModeIcon sx={{ color }} fontSize="max(2vh, 2vw)" />
-          </IconButton>
+        <div className="Header-text">
+          <div className="Header-title">LMU ACM</div>
+          <div className="Header-subtitle">{currentPage}</div>
+        </div>
+        <div className="Header-dark-toggle">
+          <div className="Header-button" style={{ backgroundColor }}>
+            <IconButton onClick={changeTheme}>
+              <LightModeIcon sx={{ color }} />
+            </IconButton>
+          </div>
         </div>
       </div>
     </div>
