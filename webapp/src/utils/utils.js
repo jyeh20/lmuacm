@@ -29,4 +29,19 @@ const compareDates = (d1, d2) => {
   return false;
 };
 
-export { getDate, compareDates };
+/**
+ * Finds the current page given a window location
+ * @param {String} windowLocation
+ */
+const getCurrentPage = (windowLocation) => {
+  switch (windowLocation) {
+    case "/events":
+      return "Events";
+    case "/links":
+      return "Links";
+    default:
+      return "Home";
+  }
+};
+
+export { getDate, compareDates, getCurrentPage };

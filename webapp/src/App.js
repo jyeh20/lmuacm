@@ -4,6 +4,7 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import app from "./firebase/firebase";
 
 import "./App.css";
+import { getCurrentPage } from "./utils/utils";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -16,7 +17,9 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPage] = useState(
+    getCurrentPage(window.location.pathname)
+  );
   const [textColor, setTextColor] = useState("#DBDBDB");
   const [bgColor, setBgColor] = useState("141414");
   const [linkDoc, setLinkDoc] = useState([]);
