@@ -1,2 +1,2 @@
 # lmuacm
-Public Repository for LMU ACM's webapp
+Public Repository for LMU ACM github projects
