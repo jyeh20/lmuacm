@@ -91,8 +91,15 @@
 
 @media (min-width: 768px) {
   .Home-bg-img {
-    height: 100vw;
-    top: calc(70px - 30vh);
+    height: max(50vw, 50vh);
+    top: -6vw;
+    left: 50%;
+    margin-left: min(-25vw, -25vh);
+  }
+
+  .Home-content {
+    margin-top: calc(60px + 10 * ((70vh - 30px) / 16));
+    padding-bottom: 25vh;
   }
 
   .Home-content-title {

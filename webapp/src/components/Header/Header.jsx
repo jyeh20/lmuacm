@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./Header.css";
 
 const Header = (props) => {
-  const { changeTheme, currentPage, color, backgroundColor } = props;
+  const { changeTheme, openNav, currentPage, color, backgroundColor } = props;
 
   return (
     <div className="Header">
@@ -25,7 +25,7 @@ const Header = (props) => {
         <div className="Header-menu">
           <div className="Header-button" style={{ backgroundColor }}>
             <IconButton>
-              <MenuIcon sx={{ color }} />
+              <MenuIcon sx={{ color }} onClick={openNav} />
             </IconButton>
           </div>
         </div>

@@ -1,0 +1,89 @@
+.Navbar-modal {
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.Navbar-in {
+  position: absolute;
+  padding-top: 20vh;
+  height: 80vh;
+  width: 20vw;
+  -webkit-animation: slide 0.2s normal;
+  animation: slide 0.2s normal;
+}
+
+.Navbar-out {
+  position: absolute;
+  padding-top: 20vh;
+  height: 80vh;
+  width: 20vw;
+  -webkit-animation: slide-out 0.2s normal;
+  animation: slide-out 0.2s normal;
+}
+
+.Navbar-link {
+  text-decoration: none;
+}
+
+.Navbar-links-start {
+  height: 0;
+  border-style: solid;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  border-top-width: 1px;
+}
+
+.Navbar-button {
+  text-decoration: none;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom-width: 1px;
+  border-collapse: collapse;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    left: -20vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: -20vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -20vw;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -20vw;
+  }
+}
