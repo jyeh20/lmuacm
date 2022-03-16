@@ -19,3 +19,9 @@ tr:last-child > td {
     font-size: 0.6em;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .Event-info {
+    font-size: 0.85em;
+  }
+}

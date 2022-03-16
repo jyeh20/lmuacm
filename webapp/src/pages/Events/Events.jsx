@@ -1,5 +1,5 @@
 import React from "react";
-import EventsTable from "../../components/Home/EventsTable/EventsTable";
+import EventsTable from "../../components/Events/EventsTable/EventsTable";
 
 import "./Events.css";
 

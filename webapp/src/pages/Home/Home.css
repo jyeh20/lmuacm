@@ -12,12 +12,15 @@
   -ms-animation: fadeIn 5s;
 }
 
-.Home-content {
+.Home-bg {
   min-width: 360px;
   margin-top: 300px;
   padding-bottom: 150px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+.Home-content {
   animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;
