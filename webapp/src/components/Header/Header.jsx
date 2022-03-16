@@ -24,8 +24,8 @@ const Header = (props) => {
       <div className="Header-large-screen">
         <div className="Header-menu">
           <div className="Header-button" style={{ backgroundColor }}>
-            <IconButton>
-              <MenuIcon sx={{ color }} onClick={openNav} />
+            <IconButton onClick={openNav}>
+              <MenuIcon sx={{ color }} />
             </IconButton>
           </div>
         </div>
