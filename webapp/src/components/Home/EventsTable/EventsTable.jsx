@@ -1,27 +1,14 @@
 import React, { useState } from "react";
 
 import "./EventsTable.css";
+import { getDate } from "../../../utils/utils";
 import EventsData from "../EventsData/EventsData";
 
 const EventsTable = (props) => {
   const { eventDoc } = props;
-  const MONTHS = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "October",
-    "November",
-    "December",
-  ];
-  const date = new Date();
-  const month = MONTHS[date.getMonth()];
-  const day = [date.getDate()];
-  const dateString = [month, day];
+
+  const date = getDate(new Date());
+
   return (
     <table>
       <tr>
@@ -32,11 +19,12 @@ const EventsTable = (props) => {
       </tr>
       {Object.entries(eventDoc).map(([name, items]) => (
         <EventsData
-          name={name}
+          name={items.name}
           when={items.when}
           where={items.where}
           info={items.info}
-          dateString={dateString}
+          date={items.date}
+          todaysDate={date}
         />
       ))}
     </table>

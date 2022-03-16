@@ -1,36 +1,26 @@
 import React, { useEffect, useState } from "react";
 
-import { MONTHS } from "../../../assets/constants";
+import { getDate, compareDates } from "../../../utils/utils";
 
 import "./EventsData.css";
 
 const EventsData = (props) => {
-  const { name, when, where, info, dateString } = props;
+  const { name, when, where, info, date, todaysDate } = props;
   const [backgroundColor, setBackgroundColor] = useState("#66081D");
 
-  const getEventDate = (eventString) => {
-    let date = [];
-    const monthSet = new Set(MONTHS);
-    eventString = eventString.split(" ");
-    for (let index = 0; index < eventString.length; index++) {
-      console.log(eventString[index]);
-      if (monthSet.has(eventString[index])) {
-        date.push(eventString[index]);
-        date.push(eventString[index + 1]);
-        return date;
-      }
-    }
+  const getEventDate = (date) => {
+    let d = new Date(date);
+    return getDate(d);
   };
+
   const getEventBackground = (date) => {
-    console.log(dateString, getEventDate(date));
     setBackgroundColor(
-      dateString === getEventDate(date) ? "#789F7E" : "#66081D"
+      compareDates(getEventDate(date), todaysDate) ? "#789F7E" : "#66081D"
     );
   };
 
   useEffect(() => {
-    getEventBackground(when);
-    console.log(MONTHS);
+    getEventBackground(date);
   }, []);
 
   return (
