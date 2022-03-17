@@ -9,8 +9,6 @@ const EventsTable = (props) => {
 
   const date = getDate(new Date());
 
-  console.log(eventDoc);
-
   const getEvents = (events, date) => {
     if (events) {
       return events.map((eventDetails) => (

@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import IconButton from "@mui/material/IconButton";
 
+import Navbar from "../Navbar/Navbar";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./Header.css";
 
 const Header = (props) => {
-  const { changeTheme, openNav, currentPage, color, backgroundColor } = props;
+  const { changeTheme, currentPage, color, backgroundColor } = props;
+  const [navOpen, setNavOpen] = useState(false);
+
+  const handleNavbar = () => {
+    setNavOpen(!navOpen);
+  };
 
   return (
     <div className="Header">
+      <Navbar
+        color={color}
+        back={backgroundColor}
+        handleNavbar={handleNavbar}
+        isOpen={navOpen}
+      />
       <div className="Header-mobile">
         <div className="Header-dark-toggle" style={{ backgroundColor }}>
           <IconButton onClick={changeTheme}>
@@ -24,7 +36,7 @@ const Header = (props) => {
       <div className="Header-large-screen">
         <div className="Header-menu">
           <div className="Header-button" style={{ backgroundColor }}>
-            <IconButton onClick={openNav}>
+            <IconButton onClick={handleNavbar}>
               <MenuIcon sx={{ color }} />
             </IconButton>
           </div>

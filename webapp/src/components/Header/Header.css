@@ -10,6 +10,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: 1;
 }
 
 @media screen and (max-width: 767px) {
@@ -61,12 +62,16 @@
 }
 
 @media screen and (min-width: 768px) {
+  .Header {
+    height: 9vh;
+  }
+
   .Header-mobile {
     display: none;
   }
 
   .Header-large-screen {
-    height: 9vh;
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 27% 8% 30% 8% 27%;

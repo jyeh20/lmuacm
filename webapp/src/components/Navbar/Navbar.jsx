@@ -4,15 +4,20 @@ import "./Navbar.css";
 import assets from "../../assets/assetList.json";
 
 const Navbar = (props) => {
-  const { color, bgColor, closeNav, isOpen } = props;
-  const [navIn, setNavIn] = useState(isOpen);
+  const { color, bgColor, handleNavbar, isOpen } = props;
+  const [displayNav, setDisplayNav] = useState(true);
   const navs = assets.nav;
 
   const borderColor = bgColor === "#141414" ? "#C4C4C4" : "#585858";
   const backgroundColor = bgColor === "#141414" ? "#363636" : "#C7C7C7";
 
   const initiateNavClose = () => {
-    setNavIn(false);
+    setDisplayNav(false);
+  };
+
+  const handleCloseNav = () => {
+    handleNavbar();
+    setDisplayNav(true);
   };
 
   const navButtons = navs.map(([name, link]) => (
@@ -22,13 +27,14 @@ const Navbar = (props) => {
       </div>
     </a>
   ));
+
   return (
     <div
       className="Navbar-modal"
       onClick={initiateNavClose}
       style={{ display: isOpen ? "inherit" : "none" }}
     >
-      {navIn ? (
+      {displayNav ? (
         <div
           className="Navbar-in"
           style={{ backgroundColor }}
@@ -43,7 +49,7 @@ const Navbar = (props) => {
         <div
           className="Navbar-out"
           style={{ backgroundColor }}
-          onAnimationEnd={closeNav}
+          onAnimationEnd={handleCloseNav}
         >
           <div className="Navbar-links-start" style={{ borderColor }} />
           {navButtons}

@@ -31,35 +31,38 @@ const Footer = (props) => {
 
   return (
     <div className="Footer">
-      {navButtons.map(([name, link], index) => (
-        <div
-          className="Footer-section"
-          style={{
-            gridColumnStart: index * 2 + 2,
-          }}
-        >
-          <a
-            className="Footer-button-container"
-            onClick={() => {
-              handlePageChange(name);
+      <div className="Footer-mobile">
+        {navButtons.map(([name, link], index) => (
+          <div
+            className="Footer-section"
+            style={{
+              gridColumnStart: index * 2 + 2,
             }}
           >
-            <Link
-              // href={link}
-              style={{
-                color: "#DBDBDB",
-                textDecoration: "None",
+            <a
+              className="Footer-button-container"
+              onClick={() => {
+                handlePageChange(name);
               }}
-              to={link}
             >
-              <IconButton className="Footer-button">
-                {getButton(name)}
-              </IconButton>
-              <div className="Footer-link">{name}</div>
-            </Link>
-          </a>
-        </div>
-      ))}
+              <Link
+                // href={link}
+                style={{
+                  color: "#DBDBDB",
+                  textDecoration: "None",
+                }}
+                to={link}
+              >
+                <IconButton className="Footer-button">
+                  {getButton(name)}
+                </IconButton>
+                <div className="Footer-link">{name}</div>
+              </Link>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div className="Footer-desktop">hi</div>
     </div>
   );
 };

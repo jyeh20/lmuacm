@@ -102,7 +102,6 @@
 
   .Home-content {
     margin-top: calc(60px + 10 * ((70vh - 30px) / 16));
-    padding-bottom: 25vh;
   }
 
   .Home-content-title {

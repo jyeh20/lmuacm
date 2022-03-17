@@ -16,29 +16,23 @@ import Links from "./pages/Links/Links";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [lightMode, setLightMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(
     getCurrentPage(window.location.pathname)
   );
   const [textColor, setTextColor] = useState("#DBDBDB");
-  const [bgColor, setBgColor] = useState("141414");
+  const [bgColor, setBgColor] = useState("#141414");
   const [linkDoc, setLinkDoc] = useState([]);
-  const [eventDoc, setEventDoc] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [recentEvents, setRecentEvents] = useState([]);
-  const [displayNav, setDisplayNav] = useState(false);
   const db = getFirestore(app);
 
-  const handleOpenNav = () => {
-    setDisplayNav(true);
-  };
-
-  const handleCloseNav = () => {
-    setDisplayNav(false);
-  };
-
   const handleChangeTheme = () => {
-    setLightMode(!lightMode);
+    updateColor(setTextColor, textColor);
+    updateColor(setBgColor, bgColor);
+  };
+
+  const updateColor = (setter, color) => {
+    setter(color === "#DBDBDB" ? "#141414" : "#DBDBDB");
   };
 
   async function getData(queryDocument, stateFunction, toSplit = false) {
@@ -47,7 +41,7 @@ function App() {
 
     if (docSnap.exists()) {
       if (toSplit) {
-        splitEvents(docSnap.data(), setUpcomingEvents, setRecentEvents);
+        stateFunction(docSnap.data(), setUpcomingEvents, setRecentEvents);
       } else {
         stateFunction(docSnap.data());
       }
@@ -57,29 +51,15 @@ function App() {
   }
 
   useEffect(() => {
-    setTextColor(lightMode ? "#141414" : "#DBDBDB");
-    setBgColor(lightMode ? "#DBDBDB" : "#141414");
-  }, [lightMode, handleChangeTheme]);
-
-  useEffect(() => {
     getData("links", setLinkDoc);
-    getData("events", setEventDoc, true);
+    getData("events", splitEvents, true);
   }, []);
 
   return (
-    <Router forceRefresh={false}>
+    <Router>
       <div className="App">
-        {displayNav ? (
-          <Navbar
-            color={textColor}
-            bgColor={bgColor}
-            closeNav={handleCloseNav}
-            isOpen={displayNav}
-          />
-        ) : null}
         <Header
           changeTheme={handleChangeTheme}
-          openNav={handleOpenNav}
           currentPage={currentPage}
           color={textColor}
           backgroundColor={bgColor}
