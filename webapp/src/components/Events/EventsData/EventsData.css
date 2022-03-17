@@ -16,7 +16,7 @@ tr:last-child > td {
 
 @media screen and (max-width: 767px) {
   .Event-event {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .Event-info {
     font-size: 0.6em;
