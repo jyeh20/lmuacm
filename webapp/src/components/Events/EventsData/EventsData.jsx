@@ -6,7 +6,7 @@ import "./EventsData.css";
 
 const EventsData = (props) => {
   const { name, when, where, info, date, todaysDate } = props;
-  const [backgroundColor, setBackgroundColor] = useState("#66081D");
+  const [backgroundColor, setBackgroundColor] = useState("#585858");
 
   const getEventDate = (date) => {
     let d = new Date(date);

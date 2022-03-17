@@ -20,7 +20,7 @@ const Header = (props) => {
     <div className="Header">
       <Navbar
         color={color}
-        back={backgroundColor}
+        bgColor={backgroundColor}
         handleNavbar={handleNavbar}
         isOpen={navOpen}
       />

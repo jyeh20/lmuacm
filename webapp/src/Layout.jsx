@@ -50,6 +50,7 @@ const Layout = () => {
   }
 
   useEffect(() => {
+    console.log("getting data");
     getData("links", setLinkDoc);
     getData("events", splitEvents, true);
   }, []);

@@ -10,7 +10,11 @@ const Links = (props) => {
   const getLinks = (doc) => {
     if (doc) {
       return Object.values(doc).map((item) => (
-        <Link name={Object.keys(item)[0]} link={Object.values(item)[0]} />
+        <Link
+          name={Object.keys(item)[0]}
+          link={Object.values(item)[0]}
+          key={`Link-${Object.keys(item)[0]}`}
+        />
       ));
     }
   };
