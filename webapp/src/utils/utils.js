@@ -4,7 +4,14 @@
  * @param {String} d2
  */
 const compareDates = (d1, d2) => {
-  return d1 <= d2;
+  if (
+    d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate()
+  ) {
+    return false;
+  }
+  return d1 < d2;
 };
 
 /**
