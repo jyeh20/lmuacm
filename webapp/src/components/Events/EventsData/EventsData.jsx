@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { getDate, compareDates } from "../../../utils/utils";
+import { compareDates } from "../../../utils/utils";
 
 import "./EventsData.css";
 
@@ -9,8 +9,7 @@ const EventsData = (props) => {
   const [backgroundColor, setBackgroundColor] = useState("#585858");
 
   const getEventDate = (date) => {
-    let d = new Date(date);
-    return getDate(d);
+    return new Date(date);
   };
 
   const getEventBackground = (date) => {

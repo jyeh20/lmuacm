@@ -60,6 +60,7 @@
 
   .Footer-desktop {
     display: grid;
+    display: none;
     grid-template-columns: 10% 26.6% 26.6% 26.6% 10%;
     min-height: 100px;
     padding-top: 5vh;

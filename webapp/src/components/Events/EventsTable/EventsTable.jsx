@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 import "./EventsTable.css";
-import { getDate } from "../../../utils/utils";
 import EventsData from "../EventsData/EventsData";
 
 const EventsTable = (props) => {
   const { eventDoc } = props;
 
-  const date = getDate(new Date());
+  const date = new Date();
 
   const getEvents = (events, date) => {
     if (events) {
