@@ -4,7 +4,7 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import app from "./firebase/firebase";
 
 import "./App.css";
-import { getCurrentPage } from "./utils/utils";
+import { getCurrentPage, splitEvents } from "./utils/utils";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -24,6 +24,8 @@ function App() {
   const [bgColor, setBgColor] = useState("141414");
   const [linkDoc, setLinkDoc] = useState([]);
   const [eventDoc, setEventDoc] = useState([]);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [recentEvents, setRecentEvents] = useState([]);
   const [displayNav, setDisplayNav] = useState(false);
   const db = getFirestore(app);
 
@@ -39,12 +41,16 @@ function App() {
     setLightMode(!lightMode);
   };
 
-  async function getData(queryDocument, stateFunction) {
+  async function getData(queryDocument, stateFunction, toSplit = false) {
     const docRef = doc(db, "acm-data", queryDocument);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      stateFunction(docSnap.data());
+      if (toSplit) {
+        splitEvents(docSnap.data(), setUpcomingEvents, setRecentEvents);
+      } else {
+        stateFunction(docSnap.data());
+      }
     } else {
       console.log("No Data exists");
     }
@@ -57,7 +63,7 @@ function App() {
 
   useEffect(() => {
     getData("links", setLinkDoc);
-    getData("events", setEventDoc);
+    getData("events", setEventDoc, true);
   }, []);
 
   return (
@@ -83,12 +89,23 @@ function App() {
             exact
             path="/"
             element={
-              <Home color={textColor} bgColor={bgColor} eventDoc={eventDoc} />
+              <Home
+                color={textColor}
+                backgroundColor={bgColor}
+                eventDoc={upcomingEvents}
+              />
             }
           />
           <Route
             path="/events"
-            element={<Events bgColor={bgColor} eventDoc={eventDoc} />}
+            element={
+              <Events
+                backgroundColor={bgColor}
+                color={textColor}
+                upcomingEvents={upcomingEvents}
+                recentEvents={recentEvents}
+              />
+            }
           />
           <Route
             path="/links"

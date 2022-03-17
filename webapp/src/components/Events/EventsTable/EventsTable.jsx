@@ -9,9 +9,11 @@ const EventsTable = (props) => {
 
   const date = getDate(new Date());
 
+  console.log(eventDoc);
+
   const getEvents = (events, date) => {
     if (events) {
-      return Object.entries(events).map(([_, eventDetails]) => (
+      return events.map((eventDetails) => (
         <EventsData
           name={eventDetails.name}
           when={eventDetails.when}

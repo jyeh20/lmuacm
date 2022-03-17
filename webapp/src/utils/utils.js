@@ -1,3 +1,5 @@
+import { DataObjectSharp } from "@mui/icons-material";
+
 /**
  * Converts a date object into an map with year, month, and date properties
  * @param {Date} date
@@ -44,4 +46,26 @@ const getCurrentPage = (windowLocation) => {
   }
 };
 
-export { getDate, compareDates, getCurrentPage };
+/**
+ * Splits a given list of events into upcoming and past events
+ * @param {Object} eventDoc
+ */
+const splitEvents = (eventDoc, setUpcomingEvents, setRecentEvents) => {
+  console.log(eventDoc);
+  let upcomingEvents = [];
+  let recentEvents = [];
+  const date = new Date();
+  Object.entries(eventDoc).forEach((item) => {
+    const event = item[1];
+    if (compareDates(getDate(new Date(event.date)), getDate(date))) {
+      recentEvents.push(event);
+    } else {
+      upcomingEvents.push(event);
+    }
+  });
+
+  setUpcomingEvents(upcomingEvents);
+  setRecentEvents(recentEvents);
+};
+
+export { getDate, compareDates, getCurrentPage, splitEvents };

@@ -18,8 +18,18 @@
     padding-bottom: 14vh;
   }
 
+  .Events-table-container {
+    padding-top: 12vh;
+  }
+
+  .Events-table-header {
+    padding-top: 7vh;
+    font-size: 1.2em;
+    text-decoration: underline dotted;
+  }
+
   .Events-table {
-    padding-top: 16vh;
+    padding-top: 2vh;
   }
 }
 
@@ -29,8 +39,18 @@
     padding-bottom: 14vh;
   }
 
+  .Events-table-container {
+    padding-top: 12vh;
+  }
+
+  .Events-table-header {
+    padding-top: 7vh;
+    font-size: 1.2em;
+    text-decoration: underline dotted;
+  }
+
   .Events-table {
-    padding-top: 16vh;
+    padding-top: 2vh;
   }
 }
 

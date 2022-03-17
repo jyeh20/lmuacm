@@ -15,7 +15,7 @@ const EventsData = (props) => {
 
   const getEventBackground = (date) => {
     setBackgroundColor(
-      compareDates(getEventDate(date), todaysDate) ? "#789F7E" : "#66081D"
+      compareDates(getEventDate(date), todaysDate) ? "#66081D" : "#066B38"
     );
   };
 

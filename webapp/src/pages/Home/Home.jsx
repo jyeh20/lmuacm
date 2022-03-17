@@ -6,7 +6,7 @@ import EventsTable from "../../components/Events/EventsTable/EventsTable";
 import Contact from "../../components/Home/Contact/Contact";
 
 const Home = (props) => {
-  const { color, bgColor, eventDoc } = props;
+  const { color, backgroundColor, eventDoc } = props;
 
   return (
     <>
@@ -14,12 +14,12 @@ const Home = (props) => {
       <div
         className="Home-bg"
         style={{
-          backgroundColor: bgColor,
-          color: color,
+          backgroundColor,
+          color,
         }}
       >
         <div className="Home-content">
-          <div className="Home-content-title" style={{ color: color }}>
+          <div className="Home-content-title" style={{ color }}>
             Our Purpose
           </div>
           <div className="Home-purpose">
@@ -42,11 +42,11 @@ const Home = (props) => {
             </ol>
           </div>
 
-          <div className="Home-content-title" style={{ color: color }}>
-            Events
+          <div className="Home-content-title" style={{ color }}>
+            Upcoming Events
           </div>
           <EventsTable eventDoc={eventDoc} />
-          <div className="Home-content-title" style={{ color: color }}>
+          <div className="Home-content-title" style={{ color }}>
             Contact Us
           </div>
           <Contact color={color} />
