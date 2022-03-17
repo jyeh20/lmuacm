@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import "./Navbar.css";
 import assets from "../../assets/assetList.json";
 
@@ -21,11 +23,17 @@ const Navbar = (props) => {
   };
 
   const navButtons = navs.map(([name, link]) => (
-    <a href={link} className="Navbar-link" style={{ color }}>
+    <Link
+      to={link}
+      className="Navbar-link"
+      style={{ color }}
+      onClick={initiateNavClose}
+      key={`Navbar-${name}`}
+    >
       <div className="Navbar-button" style={{ borderColor }}>
         {name}
       </div>
-    </a>
+    </Link>
   ));
 
   return (

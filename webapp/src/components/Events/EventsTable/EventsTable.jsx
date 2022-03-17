@@ -19,6 +19,7 @@ const EventsTable = (props) => {
           info={eventDetails.info}
           date={eventDetails.date}
           todaysDate={date}
+          key={`EventsData-${eventDetails.name}`}
         />
       ));
     }

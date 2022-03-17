@@ -32,14 +32,9 @@ const Contact = (props) => {
           href={link}
           target="_blank"
           style={{ gridRowStart: index * 2 + 1, color }}
-          // className="Contact-row"
+          key={`Contact-${name}`}
         >
-          <div
-            // href={link}
-            // target="_blank"
-            // style={{ gridRowStart: index * 2 + 1, color: color }}
-            className="Contact-row"
-          >
+          <div className="Contact-row">
             <IconButton className="Contact-button">{getIcon(name)}</IconButton>
             <div className="Contact-link">{name}</div>
           </div>

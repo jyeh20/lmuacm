@@ -51,7 +51,6 @@ const getCurrentPage = (windowLocation) => {
  * @param {Object} eventDoc
  */
 const splitEvents = (eventDoc, setUpcomingEvents, setRecentEvents) => {
-  console.log(eventDoc);
   let upcomingEvents = [];
   let recentEvents = [];
   const date = new Date();

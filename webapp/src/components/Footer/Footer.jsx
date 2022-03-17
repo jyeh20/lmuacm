@@ -38,27 +38,24 @@ const Footer = (props) => {
             style={{
               gridColumnStart: index * 2 + 2,
             }}
+            key={`Footer-${name}`}
           >
-            <a
+            <Link
               className="Footer-button-container"
+              style={{
+                color: "#DBDBDB",
+                textDecoration: "None",
+              }}
+              to={link}
               onClick={() => {
                 handlePageChange(name);
               }}
             >
-              <Link
-                // href={link}
-                style={{
-                  color: "#DBDBDB",
-                  textDecoration: "None",
-                }}
-                to={link}
-              >
-                <IconButton className="Footer-button">
-                  {getButton(name)}
-                </IconButton>
-                <div className="Footer-link">{name}</div>
-              </Link>
-            </a>
+              <IconButton className="Footer-button">
+                {getButton(name)}
+              </IconButton>
+              <div className="Footer-link">{name}</div>
+            </Link>
           </div>
         ))}
       </div>
