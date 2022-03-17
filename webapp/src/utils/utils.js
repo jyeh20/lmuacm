@@ -4,7 +4,7 @@
  * @param {String} d2
  */
 const compareDates = (d1, d2) => {
-  return d1 < d2;
+  return d1 <= d2;
 };
 
 /**
