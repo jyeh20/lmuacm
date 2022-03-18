@@ -45,7 +45,10 @@ tr:last-of-type td:last-of-type {
 
 @media screen and (min-width: 370px) {
   table {
-    width: 93%;
+    min-width: 60%;
+    max-width: 93%;
+    /* calc(16px + 7 * ((100vh - 320px) / 680)) */
+    width: calc(60vw + (100vw / 7));
   }
 
   tr {

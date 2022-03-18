@@ -28,10 +28,9 @@ const EventsTable = (props) => {
     <table>
       <thead>
         <tr>
-          <th width="30%">Event</th>
+          <th width="40%">Event</th>
           <th>When</th>
           <th>Where</th>
-          <th>More Info</th>
         </tr>
       </thead>
       <tbody>{getEvents(eventDoc, date)}</tbody>

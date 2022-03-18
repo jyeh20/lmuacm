@@ -1,5 +1,16 @@
 .Event-event {
-  background-color: #66081d;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.Event-link {
+  text-decoration: none;
+  color: #dbdbdb;
+}
+
+.Event-link-div {
+  height: 100%;
+  width: 100%;
 }
 
 .Event-info {
