@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../../context/themeContext";
 
 import IconButton from "@mui/material/IconButton";
 
@@ -9,7 +10,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./Header.css";
 
 const Header = (props) => {
-  const { changeTheme, currentPage, color, backgroundColor } = props;
+  const { changeTheme, currentPage } = props;
+  const theme = useContext(ThemeContext);
+  const color = theme.color;
+  const backgroundColor = theme.backgroundColor;
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavbar = () => {

@@ -3,101 +3,75 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import app from "./firebase/firebase";
+import { app } from "./firebase/firebase";
 
+import { themes, ThemeContext } from "./context/themeContext.js";
 import { getCurrentPage, splitEvents } from "./utils/utils";
+import { getData } from "./DAL/DAL";
 
 import Home from "./pages/Home/Home";
+import Admin from "./pages/Admin/Admin";
+import AdminMain from "./pages/Admin/AdminMain";
 import Events from "./pages/Events/Events";
 import Links from "./pages/Links/Links";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import AdminRoute from "./components/Routes/AdminRoute";
 
 const Layout = () => {
   const [linkDoc, setLinkDoc] = useState([]);
+  const [events, setEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [recentEvents, setRecentEvents] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(
     getCurrentPage(window.location.pathname)
   );
-  const [textColor, setTextColor] = useState("#DBDBDB");
-  const [bgColor, setBgColor] = useState("#141414");
+  const [theme, setTheme] = useState(themes.dark);
   const db = getFirestore(app);
 
   const handleChangeTheme = () => {
-    updateColor(setTextColor, textColor);
-    updateColor(setBgColor, bgColor);
+    setTheme(theme === themes.dark ? themes.light : themes.dark);
   };
-
-  const updateColor = (setter, color) => {
-    setter(color === "#DBDBDB" ? "#141414" : "#DBDBDB");
-  };
-
-  async function getData(queryDocument, stateFunction, toSplit = false) {
-    const docRef = doc(db, "acm-data", queryDocument);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      if (toSplit) {
-        stateFunction(docSnap.data(), setUpcomingEvents, setRecentEvents);
-      } else {
-        stateFunction(docSnap.data());
-      }
-    } else {
-      console.log("No Data exists");
-    }
-  }
 
   useEffect(() => {
     getData("links", setLinkDoc);
-    getData("events", splitEvents, true);
-  }, []);
+    getData(
+      "events",
+      splitEvents,
+      { setEvents, setUpcomingEvents, setRecentEvents },
+      true
+    );
+  }, [db]);
 
   return (
-    <>
-      <Header
-        changeTheme={handleChangeTheme}
-        currentPage={currentPage}
-        color={textColor}
-        backgroundColor={bgColor}
-      />
+    <ThemeContext.Provider value={theme}>
+      <Header changeTheme={handleChangeTheme} currentPage={currentPage} />
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Home
-              color={textColor}
-              backgroundColor={bgColor}
-              eventDoc={upcomingEvents}
-            />
-          }
-        />
+        <Route exact path="/" element={<Home eventDoc={upcomingEvents} />} />
         <Route
           path="/events"
           element={
             <Events
-              backgroundColor={bgColor}
-              color={textColor}
               upcomingEvents={upcomingEvents}
               recentEvents={recentEvents}
             />
           }
         />
+        <Route path="/links" element={<Links linkDoc={linkDoc} />} />
+        <Route exact path="/admin" element={<Admin />} />
         <Route
-          path="/links"
+          exact
+          path="/admin/view"
           element={
-            <Links
-              color={textColor}
-              backgroundColor={bgColor}
-              linkDoc={linkDoc}
-            />
+            <AdminRoute>
+              <AdminMain eventDoc={events} />
+            </AdminRoute>
           }
         />
       </Routes>
-      <Footer color={textColor} setPage={setCurrentPage} />
-    </>
+      <Footer setPage={setCurrentPage} />
+    </ThemeContext.Provider>
   );
 };
 

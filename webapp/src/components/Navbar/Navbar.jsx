@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import colors from "../../utils/colors";
+import { ThemeContext } from "../../context/themeContext";
 
 import { Link } from "react-router-dom";
 
@@ -6,12 +9,16 @@ import "./Navbar.css";
 import assets from "../../assets/assetList.json";
 
 const Navbar = (props) => {
-  const { color, bgColor, handleNavbar, isOpen } = props;
+  const { handleNavbar, isOpen } = props;
+  const theme = useContext(ThemeContext);
+  const themeColor = theme.color;
+  const bgColor = theme.color;
   const [displayNav, setDisplayNav] = useState(true);
   const navs = assets.nav;
 
-  const borderColor = bgColor === "#141414" ? "#C4C4C4" : "#585858";
-  const backgroundColor = bgColor === "#141414" ? "#363636" : "#C7C7C7";
+  const color = themeColor === colors.light ? colors.dark : colors.light;
+  const borderColor = bgColor === colors.dark ? "#C4C4C4" : colors.gray;
+  const backgroundColor = bgColor === colors.dark ? "#363636" : "#C7C7C7";
 
   const initiateNavClose = () => {
     setDisplayNav(false);

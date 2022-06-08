@@ -33,9 +33,10 @@ const getCurrentPage = (windowLocation) => {
  * Splits a given list of events into upcoming and past events
  * @param {Object} eventDoc
  */
-const splitEvents = (eventDoc, setUpcomingEvents, setRecentEvents) => {
+const splitEvents = (eventDoc, setters) => {
   let upcomingEvents = [];
   let recentEvents = [];
+  let events = [];
   const date = new Date();
   Object.entries(eventDoc).forEach((item) => {
     const event = item[1];
@@ -44,10 +45,27 @@ const splitEvents = (eventDoc, setUpcomingEvents, setRecentEvents) => {
     } else {
       upcomingEvents.push(event);
     }
+    events.push(event);
   });
 
-  setUpcomingEvents(upcomingEvents);
-  setRecentEvents(recentEvents);
+  setters.setUpcomingEvents(upcomingEvents);
+  setters.setRecentEvents(recentEvents);
+  setters.setEvents(events);
 };
 
-export { compareDates, getCurrentPage, splitEvents };
+const formatEvents = (events) => {
+  let eventMap = {};
+  for (let i in events) {
+    const event = events[i];
+    eventMap[i] = {
+      date: event.date,
+      info: event.info,
+      name: event.name,
+      when: event.when,
+      where: event.where,
+    };
+  }
+  return eventMap;
+};
+
+export { compareDates, getCurrentPage, splitEvents, formatEvents };
