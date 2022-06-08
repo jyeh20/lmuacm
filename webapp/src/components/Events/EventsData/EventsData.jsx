@@ -1,22 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
-
+import colors from "../../../utils/colors";
 import { compareDates } from "../../../utils/utils";
 
 import "./EventsData.css";
 
 const EventsData = (props) => {
   const { name, when, where, info, date, todaysDate } = props;
-  let navigate = useNavigate();
-  const green = "#066B38";
-  const darkGreen = "#025B28";
-  const clickGreen = "#004B18";
-  const red = "#66081D";
-  const darkRed = "#560827";
-  const clickRed = "#460817";
 
-  const [backgroundColor, setBackgroundColor] = useState("#585858");
+  const [backgroundColor, setBackgroundColor] = useState(colors.gray);
 
   const getEventDate = (date) => {
     return new Date(date);
@@ -24,24 +16,32 @@ const EventsData = (props) => {
 
   const getEventBackground = (date) => {
     setBackgroundColor(
-      compareDates(getEventDate(date), todaysDate) ? red : green
+      compareDates(getEventDate(date), todaysDate) ? colors.red : colors.green
     );
   };
 
   const handleBgDarken = () => {
-    setBackgroundColor(backgroundColor === red ? darkRed : darkGreen);
+    setBackgroundColor(
+      backgroundColor === colors.red ? colors.darkRed : colors.darkGreen
+    );
   };
 
   const handleBgLighten = () => {
-    setBackgroundColor(backgroundColor === darkRed ? red : green);
+    setBackgroundColor(
+      backgroundColor === colors.darkRed ? colors.red : colors.green
+    );
   };
 
   const handleDownClick = () => {
-    setBackgroundColor(backgroundColor === darkRed ? clickRed : clickGreen);
+    setBackgroundColor(
+      backgroundColor === colors.darkRed ? colors.clickRed : colors.clickGreen
+    );
   };
 
   const handleUpClick = () => {
-    setBackgroundColor(backgroundColor === clickRed ? darkRed : darkGreen);
+    setBackgroundColor(
+      backgroundColor === colors.clickRed ? colors.darkRed : colors.darkGreen
+    );
   };
 
   useEffect(() => {

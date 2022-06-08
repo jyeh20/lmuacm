@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { ThemeContext } from "../../context/themeContext";
 
 import "./Links.css";
 
 import Link from "../../components/Links/Link/Link";
 
 const Links = (props) => {
-  const { backgroundColor, linkDoc } = props;
+  const { linkDoc } = props;
+  const theme = useContext(ThemeContext);
+  const backgroundColor = theme.backgroundColor;
 
   const getLinks = (doc) => {
     if (doc) {

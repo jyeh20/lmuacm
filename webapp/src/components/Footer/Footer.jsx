@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Footer.css";
+import colors from "../../utils/colors";
 import assetList from "../../assets/assetList.json";
 
 import IconButton from "@mui/material/IconButton";
@@ -11,17 +12,17 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import LinkIcon from "@mui/icons-material/Link";
 
 const Footer = (props) => {
-  const { color, setPage } = props;
+  const { setPage } = props;
   const navButtons = assetList.nav;
 
   const getButton = (name) => {
     switch (name) {
       case "Home":
-        return <HomeIcon sx={{ color: "#DBDBDB" }} />;
+        return <HomeIcon sx={{ color: colors.light }} />;
       case "Events":
-        return <CalendarTodayIcon sx={{ color: "#DBDBDB" }} />;
+        return <CalendarTodayIcon sx={{ color: colors.light }} />;
       default:
-        return <LinkIcon sx={{ color: "#DBDBDB" }} />;
+        return <LinkIcon sx={{ color: colors.light }} />;
     }
   };
 
@@ -43,7 +44,7 @@ const Footer = (props) => {
             <Link
               className="Footer-button-container"
               style={{
-                color: "#DBDBDB",
+                color: colors.light,
                 textDecoration: "None",
               }}
               to={link}
@@ -59,7 +60,6 @@ const Footer = (props) => {
           </div>
         ))}
       </div>
-      <div className="Footer-desktop">hi</div>
     </div>
   );
 };

@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+
+import { ThemeContext } from "../../context/themeContext";
 import "./Home.css";
 
 import logo from "../../assets/logo.png";
@@ -6,7 +9,10 @@ import EventsTable from "../../components/Events/EventsTable/EventsTable";
 import Contact from "../../components/Home/Contact/Contact";
 
 const Home = (props) => {
-  const { color, backgroundColor, eventDoc } = props;
+  const { eventDoc } = props;
+  const theme = useContext(ThemeContext);
+  const color = theme.color;
+  const backgroundColor = theme.backgroundColor;
 
   return (
     <>
@@ -49,7 +55,7 @@ const Home = (props) => {
           <div className="Home-content-title" style={{ color }}>
             Contact Us
           </div>
-          <Contact color={color} />
+          <Contact />
         </div>
       </div>
     </>

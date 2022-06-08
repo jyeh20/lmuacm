@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { ThemeContext } from "../../../context/themeContext";
 import "./Contact.css";
 
 import assetList from "../../../assets/assetList.json";
@@ -11,7 +12,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Contact = (props) => {
-  const { color } = props;
+  const theme = useContext(ThemeContext);
+  const color = theme.color;
   const socials = assetList.socials;
 
   const getIcon = (name) => {

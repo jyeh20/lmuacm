@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { ThemeContext } from "../../context/themeContext";
 import EventsTable from "../../components/Events/EventsTable/EventsTable";
 
 import "./Events.css";
 
 const Events = (props) => {
-  const { backgroundColor, color, upcomingEvents, recentEvents } = props;
+  const { upcomingEvents, recentEvents } = props;
+  const theme = useContext(ThemeContext);
+  const color = theme.color;
+  const backgroundColor = theme.backgroundColor;
   return (
     <div
       className="Events"
